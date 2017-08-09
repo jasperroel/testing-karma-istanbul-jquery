@@ -1,0 +1,8 @@
+# Dynamic folder
+3rd/
+
+# Coverage folder(s)
+coverage/
+
+# Node
+node_modules/

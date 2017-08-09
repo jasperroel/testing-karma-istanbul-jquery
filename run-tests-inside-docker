@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DIR=/code
+
+mkdir -p 3rd
+curl https://code.jquery.com/jquery-3.2.1.min.js -o 3rd/001-jquery-3.2.1.min.js -Ls
+curl https://raw.github.com/velesin/jasmine-jquery/master/lib/jasmine-jquery.js -o 3rd/002-jasmine-jquery.js -Ls
+docker run \
+  -it \
+  --rm \
+  --name karma-jasmine-phantomjs \
+  -v $PWD:$DIR \
+  -w $DIR \
+  node:6 \
+  bash -c "npm install && \
+           ./node_modules/karma/bin/karma start conf/karma.conf.js"

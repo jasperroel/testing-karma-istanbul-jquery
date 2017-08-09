@@ -3,6 +3,7 @@
 
 # Coverage folder(s)
 coverage/
+karma_html/
 
 # Node
 node_modules/
